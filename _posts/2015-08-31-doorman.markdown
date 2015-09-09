@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Doorman"
+date:   2015-08-31 16:13:42
+categories: projects
+image: images/doorman.png
+---
+
+In the summer semester 2014, me and 3 other students were looking for a new place to live.
+We eventually found a nice and modern flat, which was sublet to us by a PhD student.
+Unfortunately, the landlord of the place was not happy about four students moving in and
+refused to give us two additional keys, which meant that we had only 2 keys for 4 students :(
+Making copies of our keys was not an option, since you need an special agreement from the
+landlord to be able to make copies.
+
+For that reason, I decided to make a little remote controlled robot, which could open the
+door from inside. The robot brain consisted of a raspberry pi, which controlled a stepper
+motor to open the apartment door and a reed relay to open the house door (electrical buzzer).
+The stepper motor was driven through two ULN2003 Darlington transistor arrays which were
+connected to the GPIO pins of the raspberry pi. The shaft of the stepper motor was
+connected to the door lock via a rope and a stick (see video below).
+
+I found a simple python script on the internet which could be tuned to drive the stepper motor
+in unipolar mode. The script, together with another script to activate the reed relay for the
+house door, could be called via SSH from my laptop or any other device whose public key was authorized.
+Pubic key authentication was the main authorization method enabling me to add or remove
+devices which was quite handy when I hosted some of my friends from Germany.
+
+The basic opening process worked like this: At first, a new user installs the Android app
+(received .apk from me) on his phone, generates a public key with the app and sends
+the public key to me (by email or messenger). Once I had added the public key to the
+*authrized_keys* file on the pi, the user was able to open house and apartment door with the
+app once the phone was connected to the same wifi as the raspberry pi (I set up a static ip
+address for the raspberry pi). I also set up dyndns to be able to open even without being in the
+same network as the raspberry. However, I have never needed this feature since my flatmates
+never forgot their keys :D.
+
+The video of the opening process can be seen [here][youtube]. Yes, it is a badly recorded video, but I think
+it explains most of it. It was super fun tinkering around with this project that I later called
+*Doorman*. Opening the door with the android app always made me smile.
+
+[youtube]:      https://www.youtube.com/watch?v=-QZS3CHGylk

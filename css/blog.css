@@ -329,6 +329,13 @@ body .demo-blog {
   line-height: 28px;
 }
 
+.mdl-card__supporting-text ul, .mdl-card__supporting-text ol {
+  max-width: 460px;
+  margin: 16px auto;
+  font-size: 16px;
+  line-height: 28px;
+}
+
 .demo-blog--blogpost .comments {
   display: -webkit-box;
   display: -webkit-flex;
