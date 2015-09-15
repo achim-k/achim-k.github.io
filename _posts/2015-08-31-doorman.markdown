@@ -35,8 +35,10 @@ address for the raspberry pi). I also set up dyndns to be able to open even with
 same network as the raspberry. However, I have never needed this feature since my flatmates
 never forgot their keys :D.
 
-The video of the opening process can be seen [here][youtube]. Yes, it is a badly recorded video, but I think
+The video of the opening process can be seen below. Yes, it is a badly recorded video, but I think
 it explains most of it. It was super fun tinkering around with this project that I later called
 *Doorman*. Opening the door with the android app always made me smile.
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/-QZS3CHGylk" frameborder="0" allowfullscreen></iframe>
 
 [youtube]:      https://www.youtube.com/watch?v=-QZS3CHGylk

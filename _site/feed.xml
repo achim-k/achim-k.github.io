@@ -6,8 +6,8 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 03 Sep 2015 15:07:45 +0200</pubDate>
-    <lastBuildDate>Thu, 03 Sep 2015 15:07:45 +0200</lastBuildDate>
+    <pubDate>Tue, 15 Sep 2015 14:11:28 +0200</pubDate>
+    <lastBuildDate>Tue, 15 Sep 2015 14:11:28 +0200</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -137,9 +137,11 @@ address for the raspberry pi). I also set up dyndns to be able to open even with
 same network as the raspberry. However, I have never needed this feature since my flatmates
 never forgot their keys :D.&lt;/p&gt;
 
-&lt;p&gt;The video of the opening process can be seen &lt;a href=&quot;https://www.youtube.com/watch?v=-QZS3CHGylk&quot;&gt;here&lt;/a&gt;. Yes, it is a badly recorded video, but I think
+&lt;p&gt;The video of the opening process can be seen below. Yes, it is a badly recorded video, but I think
 it explains most of it. It was super fun tinkering around with this project that I later called
 &lt;em&gt;Doorman&lt;/em&gt;. Opening the door with the android app always made me smile.&lt;/p&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/-QZS3CHGylk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 </description>
         <pubDate>Mon, 31 Aug 2015 18:13:42 +0200</pubDate>
