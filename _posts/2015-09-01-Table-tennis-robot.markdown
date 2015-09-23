@@ -24,4 +24,9 @@ follows:
 
 It will be an exciting project and I can't wait to work with MoveIt! again.
 
+Edit: I am currently thinking about using an already existing robotic
+arm. This would save a lot of work and furthermore allow me to focus on the most
+difficult parts (pose estimation + motion control).
+
+
 [youtube]: https://www.youtube.com/watch?v=imVNg9j7rvU

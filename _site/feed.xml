@@ -1,180 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Achim&#39;s blog</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 15 Sep 2015 14:11:28 +0200</pubDate>
-    <lastBuildDate>Tue, 15 Sep 2015 14:11:28 +0200</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
-    
-      <item>
-        <title>Table tennis robot</title>
-        <description>&lt;p&gt;Roughly one year ago, I saw a video on youtube showing off a robot playing table
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Achim&#39;s blog</title>
+		<description>description</description>
+		<link>https://achim-k.github.io</link>
+		<atom:link href="https://achim-k.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Table tennis robot</title>
+				
+				
+					<description>&lt;p&gt;Roughly one year ago, I saw a video on youtube showing off a robot playing table
 tennis against a human (see &lt;a href=&quot;https://www.youtube.com/watch?v=imVNg9j7rvU&quot;&gt;here&lt;/a&gt;). I was impressed until I found out
 a few hours later that it was just a fake video used for a PR campaign. However, these
-days I was watching the video again and wondered if it wouldn’t be a cool idea
+days I was watching the video again and wondered if it wouldn&amp;#39;t be a cool idea
 to make a real table tennis robot capable of playing like that.&lt;/p&gt;
-
-&lt;p&gt;For now I haven’t done much for it, but my basic schedule for the project is as
-follows:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Figure out required DoF&lt;/li&gt;
-  &lt;li&gt;Create CAD drawings of the robot&lt;/li&gt;
-  &lt;li&gt;Generate URDF so robot can be used with MoveIt!&lt;/li&gt;
-  &lt;li&gt;Simulation in Gazebo (ball + table, pose estimation, robot movement)&lt;/li&gt;
-  &lt;li&gt;…&lt;/li&gt;
-  &lt;li&gt;Manufacture real robot (3d printing, motors etc.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It will be an exciting project and I can’t wait to work with MoveIt! again.&lt;/p&gt;
-
 </description>
-        <pubDate>Wed, 02 Sep 2015 18:13:42 +0200</pubDate>
-        <link>/projects/2015/09/02/Table-tennis-robot.html</link>
-        <guid isPermaLink="true">/projects/2015/09/02/Table-tennis-robot.html</guid>
-        
-        
-        <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>Robot Swarms</title>
-        <description>&lt;p&gt;TODO: Describe master thesis&lt;/p&gt;
+				
+				<pubDate>Wed, 02 Sep 2015 16:13:42 +0000</pubDate>
+				<link>https://achim-k.github.io/Table-tennis-robot</link>
+				<guid isPermaLink="true">https://achim-k.github.io/Table-tennis-robot</guid>
+			</item>
+		
+			<item>
+				<title>Robot Swarms</title>
+				
+				
+					<description>&lt;p&gt;TODO: Describe master thesis&lt;/p&gt;
 </description>
-        <pubDate>Tue, 01 Sep 2015 18:13:42 +0200</pubDate>
-        <link>/projects/2015/09/01/Robot-swarms.html</link>
-        <guid isPermaLink="true">/projects/2015/09/01/Robot-swarms.html</guid>
-        
-        
-        <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>ROS and ROS-MoveIt!</title>
-        <description>&lt;p&gt;In our second Robotics &amp;amp; Vision project, we were working on a pick &amp;amp; place task.
-The goal was to estimate the pose of a known object, grab it with a robotic
-arm and place it into a bin. Our workcell consisted of a 7-dof Mitsubishi PA-10
-robotic arm and a RGB-D camera for pose estimation. For implementing pose estimation
-and path planning, we were encouraged to use OpenCV, ROS and the university’s
-own robotics library &lt;a href=&quot;http://www.robwork.dk/jrobwork/&quot;&gt;Robwork&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;However, since we made bad experience with Robwork in the previous project, we
-decided to go with another framework, namely &lt;a href=&quot;http://moveit.ros.org/&quot;&gt;ROS-MoveIt!&lt;/a&gt;. MoveIt! is a
-state of the art and easy to use robotic software and we never regretted choosing
-it. However, there were two major drawbacks compared to using Robwork:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The PA-10 was not supported by MoveIt!&lt;/li&gt;
-  &lt;li&gt;There was no interface to the PA-10 controller which translates the planned trajectory to a robot movement&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Luckily we found a collada file of a PA-10 on the internet, which allowed us to
-create a URDF (Universal Robot Description File) for the PA-10. This file
-contains all the joint and link dimensions and is used by MoveIt! to calculate all
-necessary transformations for forward and inverse kinematics → Planning. Once we had the
-URDF ready, we could import it into the ROS visualization tool RVIZ and do some
-simulated planning and execution in our virtual workcell. We used the simulator
-of ros-industrial for the simulation.&lt;/p&gt;
-
-&lt;p&gt;The next step was to integrate the PA-10 controller into MoveIt!, so we could
-control the robotic arm via the RVIZ MoveIt! plugin. It took some time reading
-the MoveIt and PA-10 controller documentation (which were quite bad at that time)
-but I finally got a python script running which published the PA-10 joint states
-as a ROS-topic so they could be processed by MoveIt!. It was a great feeling
-controlling the PA-10 manually and simultaneously seeing the robot move in RVIZ
-accordingly. A second “translator script” was used to translate the MoveIt! trajectories into
-ROS sevice calls for the PA-10 controller.&lt;/p&gt;
-
-&lt;p&gt;For this project I had to dig very deeply into ROS and ROS-MoveIt! and thereby got to know
-it very well. It’s a great piece of software and I really enjoy working with it.
-The source code of our PA-10 adaptions including &lt;em&gt;PA10_descreption&lt;/em&gt; and &lt;em&gt;PA10_moveit_config&lt;/em&gt;
-can be found at my &lt;a href=&quot;https://bitbucket.org/akrauch/rovi2_group8&quot;&gt;Bitbucket repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 01 Sep 2015 12:13:42 +0200</pubDate>
-        <link>/projects/2015/09/01/ros-and-ros-moveit.html</link>
-        <guid isPermaLink="true">/projects/2015/09/01/ros-and-ros-moveit.html</guid>
-        
-        
-        <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>Doorman</title>
-        <description>&lt;p&gt;In the summer semester 2014, me and 3 other students were looking for a new place to live.
+				
+				<pubDate>Tue, 01 Sep 2015 16:13:42 +0000</pubDate>
+				<link>https://achim-k.github.io/Robot-swarms</link>
+				<guid isPermaLink="true">https://achim-k.github.io/Robot-swarms</guid>
+			</item>
+		
+			<item>
+				<title>ROS and ROS-MoveIt!</title>
+				
+				
+					<description>In our second Robotics &amp; Vision project, we were working on a pick &amp; place task. The goal was to estimate the pose ...</description>
+				
+				<pubDate>Tue, 01 Sep 2015 10:13:42 +0000</pubDate>
+				<link>https://achim-k.github.io/ros-and-ros-moveit</link>
+				<guid isPermaLink="true">https://achim-k.github.io/ros-and-ros-moveit</guid>
+			</item>
+		
+			<item>
+				<title>Doorman</title>
+				
+				
+					<description>&lt;p&gt;In the summer semester 2014, me and 3 other students were looking for a new place to live.
 We eventually found a nice and modern flat, which was sublet to us by a PhD student.
 Unfortunately, the landlord of the place was not happy about four students moving in and
 refused to give us two additional keys, which meant that we had only 2 keys for 4 students :(
 Making copies of our keys was not an option, since you need an special agreement from the
 landlord to be able to make copies.&lt;/p&gt;
-
-&lt;p&gt;For that reason, I decided to make a little remote controlled robot, which could open the
-door from inside. The robot brain consisted of a raspberry pi, which controlled a stepper
-motor to open the apartment door and a reed relay to open the house door (electrical buzzer).
-The stepper motor was driven through two ULN2003 Darlington transistor arrays which were
-connected to the GPIO pins of the raspberry pi. The shaft of the stepper motor was
-connected to the door lock via a rope and a stick (see video below).&lt;/p&gt;
-
-&lt;p&gt;I found a simple python script on the internet which could be tuned to drive the stepper motor
-in unipolar mode. The script, together with another script to activate the reed relay for the
-house door, could be called via SSH from my laptop or any other device whose public key was authorized.
-Pubic key authentication was the main authorization method enabling me to add or remove
-devices which was quite handy when I hosted some of my friends from Germany.&lt;/p&gt;
-
-&lt;p&gt;The basic opening process worked like this: At first, a new user installs the Android app
-(received .apk from me) on his phone, generates a public key with the app and sends
-the public key to me (by email or messenger). Once I had added the public key to the
-&lt;em&gt;authrized_keys&lt;/em&gt; file on the pi, the user was able to open house and apartment door with the
-app once the phone was connected to the same wifi as the raspberry pi (I set up a static ip
-address for the raspberry pi). I also set up dyndns to be able to open even without being in the
-same network as the raspberry. However, I have never needed this feature since my flatmates
-never forgot their keys :D.&lt;/p&gt;
-
-&lt;p&gt;The video of the opening process can be seen below. Yes, it is a badly recorded video, but I think
-it explains most of it. It was super fun tinkering around with this project that I later called
-&lt;em&gt;Doorman&lt;/em&gt;. Opening the door with the android app always made me smile.&lt;/p&gt;
-
-&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/-QZS3CHGylk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
 </description>
-        <pubDate>Mon, 31 Aug 2015 18:13:42 +0200</pubDate>
-        <link>/projects/2015/08/31/doorman.html</link>
-        <guid isPermaLink="true">/projects/2015/08/31/doorman.html</guid>
-        
-        
-        <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>Hello World!</title>
-        <description>&lt;p&gt;These are the first words of my new blog, hosted on github. The main purpose of this blog is to show off some of my projects
-and to write things down that I have on my mind. I’m a bit afraid that this blog will become abandoned soon (as so many
-diaries have before), but I’ll do my best to prevent this.&lt;/p&gt;
-
-&lt;p&gt;To the technogolical facts of this blog: It’s based on &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; which transforms plain text into static
-websites and blogs, rather than storing most of the content in a database. Another good thing about it is, that it can be
-hosted on github pages, as it is the case here.&lt;/p&gt;
-
-&lt;p&gt;I created a template based on the &lt;a href=&quot;http://getmdl.io&quot;&gt;Google Material Design Lite&lt;/a&gt;, to make the blog a bit more stylish.
-The source code and demo can be found on my github &lt;a href=&quot;https://github.com/achim-k/jekyll-mdl&quot;&gt;repository&lt;/a&gt;.&lt;/p&gt;
-
+				
+				<pubDate>Mon, 31 Aug 2015 16:13:42 +0000</pubDate>
+				<link>https://achim-k.github.io/doorman</link>
+				<guid isPermaLink="true">https://achim-k.github.io/doorman</guid>
+			</item>
+		
+			<item>
+				<title>Hello World!</title>
+				
+				
+					<description>&lt;p&gt;These are the first words of my new blog, hosted on github. The main purpose of this blog is to show off some of my projects
+and to write things down that I have on my mind. I&amp;#39;m a bit afraid that this blog will become abandoned soon (as so many
+diaries have before), but I&amp;#39;ll do my best to prevent this.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 31 Aug 2015 17:30:42 +0200</pubDate>
-        <link>/general/2015/08/31/hello-world.html</link>
-        <guid isPermaLink="true">/general/2015/08/31/hello-world.html</guid>
-        
-        
-        <category>general</category>
-        
-      </item>
-    
-  </channel>
+				
+				<pubDate>Mon, 31 Aug 2015 15:30:42 +0000</pubDate>
+				<link>https://achim-k.github.io/hello-world</link>
+				<guid isPermaLink="true">https://achim-k.github.io/hello-world</guid>
+			</item>
+		
+	</channel>
 </rss>

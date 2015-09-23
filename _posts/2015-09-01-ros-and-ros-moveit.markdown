@@ -3,7 +3,9 @@ layout: post
 title:  "ROS and ROS-MoveIt!"
 date:   2015-09-01 10:13:42
 categories: projects
-image: images/moveit.png
+excerpt: "In our second Robotics & Vision project, we were working on a pick & place task. The goal was to estimate the pose ..."
+image:
+  feature: moveit.png
 ---
 
 In our second Robotics & Vision project, we were working on a pick & place task.

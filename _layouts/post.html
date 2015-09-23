@@ -1,66 +1,83 @@
 ---
 layout: default
 ---
+<article class="postWrapper">
+  <section class="section--first is-darkBackgrounded u-table">
+    <div class="section-backgroundImage">
 
-<div class="demo-back">
-  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{ site.baseurl }}/" title="go back" role="button">
-    <i class="material-icons" role="presentation">arrow_back</i>
-  </a>
-</div>
-<div class="demo-blog__posts mdl-grid">
-  <div class="mdl-card amazing mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+      {% if page.image.feature %}
+        <img class="post-featuredImage is-loaded" onload="this.style.opacity='1';" src="{{ page.image.feature | prepend: site.baseurl_featured_img }}" style="
+        {% if page.image.topPosition %}
+          top:{{ page.image.topPosition }};
+        {% endif %}
+        " alt="">
+      {% endif %}
 
-    {% if page.image %}
-    <div class="mdl-card__media mdl-color-text--grey-50"  style="background-image: url('{{ site.baseurl }}/{{ page.image }}');">
-      <h3>{{ page.title }}</h3>
     </div>
-    {% else %}
-    <div class="mdl-card__title mdl-color-text--grey-50">
-      <h3 class="quote">{{ page.title }}</h3>
-    </div>
+    <div class="section-gradient
+    {% if page.bgGradientOpacity == "darker" %}
+      section-gradient--darker
+    {% elsif page.bgGradientOpacity == "lighter" %}
+      section-gradient--lighter
     {% endif %}
-
-    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-      <div>
-        <span>{{ page.date | date: "%b %-d, %Y" }}</span>
+    "></div>
+    <div class="section-title is-darkBackgrounded u-tableCell u-verticalAlignMiddle">
+      <div class="container">
+        <h2>{{ page.title }}</h2>
+        <div class="postMeta-wrapper">
+          <ul class="postMeta">
+            <li class="postMeta-datetime">
+              <time datetime="{{ page.date }}">
+                {{ page.date | date_to_string }}
+              </time>
+            </li>
+            <li class="postMeta-author">
+              By {{ site.author.name }}
+            </li>
+            <li class="postMeta-tags">
+              {{ page.categories }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <!-- <div class="section-spacer"></div>
-      <div class="meta__favorites">
-        425 <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-      </div>
-      <div>
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-      </div>
-      <div>
-        <i class="material-icons" role="presentation">share</i>
-        <span class="visuallyhidden">share</span>
-      </div> -->
     </div>
-    <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-      {{ content }}
+  </section>
+  <section class="section--last">
+    <div class="container container--content">
+      <div class="content-body">
+
+        {{ content }}
+
+      </div>
     </div>
 
-  </div>
-
-  <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    {% if page.next.url %}
-    <a href="{{page.next.url}}" class="demo-nav__button">
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-        <i class="material-icons">arrow_back</i>
-      </button>
-      Newer
-    </a>
-    {% endif %}
-    <div class="section-spacer"></div>
+  </section>
+  <footer class="postFooter">
     {% if page.previous.url %}
-    <a href="{{page.previous.url}}" class="demo-nav__button">
-      Older
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-        <i class="material-icons">arrow_forward</i>
-      </button>
-    </a>
+      <section class="section--prePost is-darkBackgrounded u-table">
+        <div class="section-backgroundImage section-backgroundImage--previousPage">
+          <img class="post-featuredImage"
+          {% if page.previous.image.feature %}
+            src="{{ page.previous.image.feature | prepend: site.baseurl_featured_img }}"
+          {% endif %}
+          style="top:0" alt="">
+        </div>
+        <div class="section-gradient
+        {% if page.previous.bgGradientOpacity == "darker" %}
+          section-gradient--darker
+        {% elsif page.previous.bgGradientOpacity == "lighter" %}
+          section-gradient--lighter
+        {% endif %}
+        "></div>
+        <div class="section-title u-tableCell u-verticalAlignMiddle">
+          <div class="container">
+            <h4>Next story:</h4>
+            <a class="prev" href="{{page.previous.url}}">
+              <h2>{{page.previous.title}}</h2>
+            </a>
+          </div>
+        </div>
+      </section>
     {% endif %}
-  </nav>
-</div>
+  </footer>
+</article>

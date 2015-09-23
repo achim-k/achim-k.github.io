@@ -16,7 +16,9 @@ hosted on github pages, as it is the case here.
 I created a template based on the [Google Material Design Lite][mdl], to make the blog a bit more stylish.
 The source code and demo can be found on my github [repository][jekyll-mdl-repo].
 
+Edit: I switched to a new jekyll theme based on the [Mickey][mickey] template from Vincent Chan.
 
 [jekyll]:      http://jekyllrb.com
 [mdl]:   http://getmdl.io
 [jekyll-mdl-repo]: https://github.com/achim-k/jekyll-mdl
+[mickey]: https://github.com/vincentchan/mickey

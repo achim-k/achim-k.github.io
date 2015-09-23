@@ -1,16 +1,45 @@
-# Site settings
-title: Achim's blog
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-#url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: achimkrauch
-github_username:  achim-k
 
-# Build settings
-markdown: kramdown
+# Syntax highlighting
+markdown:            redcarpet
+highlighter:         pygments
 
-paginate: 5
+# Permalinks
+permalink:           /:title
+relative_permalinks: true
+
+# Setup
+timezone:            your timezone # eg. Asia/Kathmandu
+locale:              your locale language # eg. en_us
+name:				         Achim's blog
+title:               Achim's blog
+tagline:             'Projects, experiences, thoughts, etc.'
+description:         'description'
+url:                 https://achim-k.github.io
+rss:                 rss feed url
+baseurl:             '/'
+baseurl_posts_img:   '/assets/images/posts/'
+baseurl_featured_img: '/assets/images/hero/'
+baseurl_featured_thumbnail: '/assets/images/thumbnail/'
+baseurl_javascripts: '/assets/javascripts/'
+icon:                your site icon path # /assets/img/icon.png [best 300px X 300px]
+disqus:              disqus_shortname # get it on https://disqus.com/admin/
+
+author:
+  name:           	 Hans-Joachim Krauch
+  url:            	 https://achim-k.github.io
+  twitter:           username
+  linkedin:          hakrauch
+  github:            achim-k
+
+# Server
+destination:      	 ./_site
+exclude:          	 [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "haml"]
+port:             	 9001
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "default"

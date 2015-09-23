@@ -1,71 +1,57 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="demo-blog__posts mdl-grid">
+<section class="section--first section--frontpage">
+  <div class="section-title">
+    <div class="container">
+      <h1 class="textLogo--frontpage">
+        {{ site.name }}
+      </h1>
+      <h5 class="postMeta-tagline">{{ site.tagline }}</h5>
+      <div class="postMeta-wrapper postMeta-wrapper--frontpage">
+        <ul class="postMeta">
+          <li class="postMeta-tagline">
 
-  {% for post in paginator.posts %}
-  {% if post.image %}
-  <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{ post.image }}');">
-      <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-    </div>
-    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-      {{ post.content | strip_html | truncatewords:50}}
-    </div>
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-      <div>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </li>
+        </ul>
       </div>
-      <div class="section-spacer"></div>
-      <span style="padding-right: 10px;">Read more</span>
-      <a href="{{ post.url | prepend: site.baseurl }}" class="demo-nav__button" title="read more">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-button--fab mdl-button--colored">
-          <i class="material-icons" role="presentation">arrow_forward</i>
-        </button>
-      </a>
     </div>
   </div>
-  {% else %}
-  <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
-    <div class="mdl-card__title mdl-color-text--grey-50">
-      <h3 class="quote"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-    </div>
-    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-      {{ post.content | strip_html | truncatewords:50}}
-    </div>
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-      <div>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </div>
-      <div class="section-spacer"></div>
-      <span style="padding-right: 10px;">Read more</span>
-      <a href="{{ post.url | prepend: site.baseurl }}" class="demo-nav__button" title="read more">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-button--fab mdl-button--colored">
-          <i class="material-icons" role="presentation">arrow_forward</i>
-        </button>
-      </a>
+</section>
+<section class="section--postsWrapper">
+  <div class="container">
+    <div class="blockGroup">
+      <ul class="blockGroup-list">
+        {% for post in site.posts %}
+          <li class="block">
+            <div class="postArticle-wrapper">
+              <article class="postArticle postArticle--short">
+                {% if post.image.feature %}
+                  <a href="{{ post.url }}">
+                    <div class="postArticle-image desaturate" style="background-image:url('{{ post.image.feature | prepend: site.baseurl_featured_img }}')">
+                    </div>
+                  </a>
+                {% else %}
+                <a href="{{ post.url }}">
+                  <div class="postArticle-image desaturate" style="background: repeating-linear-gradient(
+                      45deg,
+                      blue,
+                      blue 20px,
+                      darkgrey 20px,
+                      darkgrey 40px /* determines size */
+                    ); ">
+                  </div>
+                </a>
+                {% endif %}
+                <a class="postArticle-title" href="{{ post.url }}">{{ post.title }}</a>
+              </article>
+              <div class="block-postMeta">{{ post.date | date_to_string }}</div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
-  {% endif %}
-  {% endfor %}
-
-  <nav class="demo-nav mdl-cell mdl-cell--12-col">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="demo-nav__button" title="show previous">
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">arrow_backward</i>
-      </button>
-      Newer
-    </a>
-    {% endif %}
-    <div class="section-spacer"></div>
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="demo-nav__button" title="show next">
-      Older
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">arrow_forward</i>
-      </button>
-    </a> {% endif %}
-  </nav>
-</div>
+</section>
