@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>Achim&#39;s blog</title>
-		<description>description</description>
+		<description>Projects, experiences, thoughts, etc. from Hans-Joachim krauch</description>
 		<link>https://achim-k.github.io</link>
 		<atom:link href="https://achim-k.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
@@ -17,7 +17,7 @@ days I was watching the video again and wondered if it wouldn&amp;#39;t be a coo
 to make a real table tennis robot capable of playing like that.&lt;/p&gt;
 </description>
 				
-				<pubDate>Wed, 02 Sep 2015 16:13:42 +0000</pubDate>
+				<pubDate>Wed, 02 Sep 2015 18:13:42 +0200</pubDate>
 				<link>https://achim-k.github.io/Table-tennis-robot</link>
 				<guid isPermaLink="true">https://achim-k.github.io/Table-tennis-robot</guid>
 			</item>
@@ -29,7 +29,7 @@ to make a real table tennis robot capable of playing like that.&lt;/p&gt;
 					<description>&lt;p&gt;TODO: Describe master thesis&lt;/p&gt;
 </description>
 				
-				<pubDate>Tue, 01 Sep 2015 16:13:42 +0000</pubDate>
+				<pubDate>Tue, 01 Sep 2015 18:13:42 +0200</pubDate>
 				<link>https://achim-k.github.io/Robot-swarms</link>
 				<guid isPermaLink="true">https://achim-k.github.io/Robot-swarms</guid>
 			</item>
@@ -40,7 +40,7 @@ to make a real table tennis robot capable of playing like that.&lt;/p&gt;
 				
 					<description>In our second Robotics &amp; Vision project, we were working on a pick &amp; place task. The goal was to estimate the pose ...</description>
 				
-				<pubDate>Tue, 01 Sep 2015 10:13:42 +0000</pubDate>
+				<pubDate>Tue, 01 Sep 2015 12:13:42 +0200</pubDate>
 				<link>https://achim-k.github.io/ros-and-ros-moveit</link>
 				<guid isPermaLink="true">https://achim-k.github.io/ros-and-ros-moveit</guid>
 			</item>
@@ -57,7 +57,7 @@ Making copies of our keys was not an option, since you need an special agreement
 landlord to be able to make copies.&lt;/p&gt;
 </description>
 				
-				<pubDate>Mon, 31 Aug 2015 16:13:42 +0000</pubDate>
+				<pubDate>Mon, 31 Aug 2015 18:13:42 +0200</pubDate>
 				<link>https://achim-k.github.io/doorman</link>
 				<guid isPermaLink="true">https://achim-k.github.io/doorman</guid>
 			</item>
@@ -71,7 +71,7 @@ and to write things down that I have on my mind. I&amp;#39;m a bit afraid that t
 diaries have before), but I&amp;#39;ll do my best to prevent this.&lt;/p&gt;
 </description>
 				
-				<pubDate>Mon, 31 Aug 2015 15:30:42 +0000</pubDate>
+				<pubDate>Mon, 31 Aug 2015 17:30:42 +0200</pubDate>
 				<link>https://achim-k.github.io/hello-world</link>
 				<guid isPermaLink="true">https://achim-k.github.io/hello-world</guid>
 			</item>
