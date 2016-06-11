@@ -3,9 +3,6 @@ layout: post
 title:  "ROS and ROS-MoveIt!"
 date:   2015-09-01 10:13:42
 categories: projects
-excerpt: "In our second Robotics & Vision project, we were working on a pick & place task. The goal was to estimate the pose ..."
-image:
-  feature: moveit.png
 ---
 
 In our second Robotics & Vision project, we were working on a pick & place task.
@@ -41,9 +38,8 @@ accordingly. A second "translator script" was used to translate the MoveIt! traj
 ROS sevice calls for the PA-10 controller.
 
 For this project I had to dig very deeply into ROS and ROS-MoveIt! and thereby got to know
-it very well. It's a great piece of software and I really enjoy working with it.
-The source code of our PA-10 adaptions including *PA10_descreption* and *PA10_moveit_config*
-can be found at my [Bitbucket repository][bitbucket].
+it very well. The source code of our PA-10 adaptions including *PA10_description*
+and *PA10_moveit_config* can be found at this [Bitbucket repository][bitbucket].
 
 [robwork]:      http://www.robwork.dk/jrobwork/
 [moveit]:   http://moveit.ros.org/

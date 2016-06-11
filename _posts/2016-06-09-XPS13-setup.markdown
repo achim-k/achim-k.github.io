@@ -5,9 +5,8 @@ date:   2016-06-09 23:00:42
 categories: projects
 ---
 
-# XPS 13 setup
 ## Install 16.04 (64-bit)
-- Download desktop iso and create bootable usb stick, using pre-installed program `startup disk creator`.
+- Download desktop iso and create bootable usb stick, using pre-installed program **Startup Disk Creator**.
 - Reboot into BIOS and disable Secure boot
 - Install Ubuntu from stick
 - Enable Secure Boot again
@@ -27,10 +26,12 @@ sudo dpkg -i linux-headers-4.4*.deb linux-image-4.4*.deb
 sudo apt-get install xserver-xorg-input-libinput
 ```
 Edit the following file
+
 ```bash
 sudo vi /usr/share/X11/xorg.conf.d/90-libinput.conf
 ```
 and set the following options in the appropriate section
+
 ```bash
 Section "InputClass"
     Identifier "libinput touchpad catchall"
@@ -40,19 +41,22 @@ Section "InputClass"
     Option "Tapping" "True"
 EndSection
 ```
-Logout and login
+Logout and login again
 
 # Touch gestures
 Short summary from [this github repo](https://github.com/bulletmark/libinput-gestures):
+
 ```bash
 sudo apt install libinput-tools xdotool
 sudo gpasswd -a $USER input  # Then log out and back in to assign this group
 ```
 After login, check if you can see your gestures appearing here:
+
 ```bash
 libinput-debug-events
 ```
 Clone repo and install:
+
 ```bash
 git clone http://github.com/bulletmark/libinput-gestures
 cd libinput-gestures
@@ -60,21 +64,29 @@ make install                # Do this as your normal user, NOT as sudo/root.
 ```
 Configure gestures in `~/.config/libinput-gestures.conf`.
 Could then look like this:
-```yaml
+
+```
 gesture: swipe up 3	xdotool key ctrl+super+Up
 gesture: swipe down 3	xdotool key ctrl+super+Down
 gesture: swipe right 3	xdotool key alt+Right
 gesture: swipe left 3	xdotool key alt+Left
 
 gesture: swipe up 4     xdotool key shift+super+w
+gesture: swipe down 4   xdotool key super+s
 gesture: swipe left 4   xdotool key ctrl+alt+Left
-gesture: swipe right 4   xdotool key ctrl+alt+Right
-
-# GNOME SHELL open/close overview
-gesture: pinch in	xdotool key super+s
-gesture: pinch out	xdotool key super+s
+gesture: swipe right 4  xdotool key ctrl+alt+Right
 ```
 Test it by running
+
 ```bash
 ./libinput-gestures # will autostart on startup
+```
+
+# Other issues
+
+## Slow shutdown due to cups-browsed service
+see [here](http://askubuntu.com/questions/760952/slow-shutdown-on-ubuntu-16-04-lts-stopping-thermal-daemon-running-fit-make-remo)
+
+```bash
+sudo systemctl disable cups-browsed.service
 ```
