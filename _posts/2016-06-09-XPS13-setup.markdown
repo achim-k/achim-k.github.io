@@ -90,3 +90,10 @@ see [here](http://askubuntu.com/questions/760952/slow-shutdown-on-ubuntu-16-04-l
 ```bash
 sudo systemctl disable cups-browsed.service
 ```
+
+## Chrome flickering
+see [here](https://bugs.chromium.org/p/chromium/issues/detail?id=606152#c73)
+
+```bash
+sudo apt-get purge xserver-xorg-video-intel
+```
