@@ -6,9 +6,24 @@
 </description>
     <link>http://achimk-k.github.io/</link>
     <atom:link href="http://achimk-k.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Jun 2016 13:44:28 +0200</pubDate>
-    <lastBuildDate>Sat, 11 Jun 2016 13:44:28 +0200</lastBuildDate>
+    <pubDate>Sun, 02 Oct 2016 23:26:00 +0200</pubDate>
+    <lastBuildDate>Sun, 02 Oct 2016 23:26:00 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Bike cargo rack for cheap</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/wooden_bike_cargo_rack.jpg&quot; alt=&quot;wooden bike cargo rack&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Worked surprisingly well :)&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Oct 2016 01:10:42 +0200</pubDate>
+        <link>http://achimk-k.github.io/projects/2016/10/02/wodden-bike-cargo-rack.html</link>
+        <guid isPermaLink="true">http://achimk-k.github.io/projects/2016/10/02/wodden-bike-cargo-rack.html</guid>
+        
+        
+        <category>projects</category>
+        
+      </item>
     
       <item>
         <title>XPS 13 Setup</title>
@@ -97,6 +112,13 @@ gesture: swipe right 4  xdotool key ctrl+alt+Right
 &lt;p&gt;see &lt;a href=&quot;http://askubuntu.com/questions/760952/slow-shutdown-on-ubuntu-16-04-lts-stopping-thermal-daemon-running-fit-make-remo&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo systemctl disable cups-browsed.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;chrome-flickering&quot;&gt;Chrome flickering&lt;/h2&gt;
+&lt;p&gt;see &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=606152#c73&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get purge xserver-xorg-video-intel
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
